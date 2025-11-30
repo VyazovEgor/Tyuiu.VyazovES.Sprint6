@@ -1,4 +1,4 @@
-namespace WinFormsApp1
+namespace Tyuiu.VyazovES.Sprint6.Task3.V16
 {
     internal static class Program
     {
