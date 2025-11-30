@@ -1,7 +1,7 @@
-﻿namespace Tyuiu.VyazovES.Sprint6.Task0.V16.Test
+﻿namespace Tyuiu.VyazovES.Sprint6.Task1.V5.Test
 {
     [TestClass]
-    public sealed class Test1
+    public sealed class DataServiceTest
     {
         [TestMethod]
         public void TestMethod1()
