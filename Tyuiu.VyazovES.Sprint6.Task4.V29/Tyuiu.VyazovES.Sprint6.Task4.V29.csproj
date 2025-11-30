@@ -9,7 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Tyuiu.VyazovES.Sprint6.Task2.V14.Lib\Tyuiu.VyazovES.Sprint6.Task2.V14.Lib.csproj" />
+    <PackageReference Include="servicestack.common" Version="6.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tyuiu.VyazovES.Sprint6.Task4.V29.Lib\Tyuiu.VyazovES.Sprint6.Task4.V29.Lib.csproj" />
   </ItemGroup>
 
   <ItemGroup>
