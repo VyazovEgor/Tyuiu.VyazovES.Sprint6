@@ -15,6 +15,7 @@ namespace Tyuiu.VyazovES.Sprint6.Task1.V5.Lib
             {
                 // Вычисляем значение функции для текущего x
                 double res = Math.Sin(x) + (Math.Cos(2 * x) / 2) - (1.5 * x);
+                res = Math.Round(res, 2);
                 result[index] = res;
                 index++;
             }
