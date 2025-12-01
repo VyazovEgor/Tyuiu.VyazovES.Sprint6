@@ -16,24 +16,9 @@ namespace Tyuiu.VyazovES.Sprint6.Task5.V28.Lib
                 // Читаем все строки из файла
                 string[] lines = File.ReadAllLines(path);
 
-                // Сначала считаем, сколько у нас будет чисел
-                int count = 0;
-                foreach (string line in lines)
-                {
-                    if (!string.IsNullOrWhiteSpace(line))
-                    {
-                        string normalizedLine = line.Replace(',', '.');
-                        if (double.TryParse(normalizedLine, NumberStyles.Any, CultureInfo.InvariantCulture, out _))
-                        {
-                            count++;
-                        }
-                    }
-                }
+                // Список для хранения отфильтрованных чисел
+                List<double> filteredNumbers = new List<double>();
 
-                // Создаем массив нужного размера
-                result = new double[count];
-
-                // Заполняем массив числами
                 foreach (string line in lines)
                 {
                     if (string.IsNullOrWhiteSpace(line))
@@ -44,13 +29,18 @@ namespace Tyuiu.VyazovES.Sprint6.Task5.V28.Lib
 
                     if (double.TryParse(normalizedLine, NumberStyles.Any, CultureInfo.InvariantCulture, out double number))
                     {
+                        // Добавляем только если число меньше 10
                         if (number < 10)
-                        { // Округляем до трёх знаков после запятой
-                            result[index] = Math.Round(number, 3);
-                            index++;
+                        {
+                            // Округляем до трёх знаков после запятой
+                            filteredNumbers.Add(Math.Round(number, 3));
                         }
                     }
                 }
+
+                // Преобразуем список в массив
+                result = filteredNumbers.ToArray();
+                index = result.Length; // Обновляем индекс
             }
             catch (Exception)
             {
