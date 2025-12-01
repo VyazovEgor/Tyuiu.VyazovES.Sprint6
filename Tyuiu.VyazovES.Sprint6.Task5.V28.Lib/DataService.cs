@@ -44,9 +44,11 @@ namespace Tyuiu.VyazovES.Sprint6.Task5.V28.Lib
 
                     if (double.TryParse(normalizedLine, NumberStyles.Any, CultureInfo.InvariantCulture, out double number))
                     {
-                        // Округляем до трёх знаков после запятой
-                        result[index] = Math.Round(number, 3);
-                        index++;
+                        if (number < 10)
+                        { // Округляем до трёх знаков после запятой
+                            result[index] = Math.Round(number, 3);
+                            index++;
+                        }
                     }
                 }
             }
