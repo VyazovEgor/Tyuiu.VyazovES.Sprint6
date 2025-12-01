@@ -31,7 +31,7 @@ namespace Tyuiu.VyazovES.Sprint6.Task6.V19.Lib
                     bool containsL = false;
                     foreach (char c in word)
                     {
-                        if (c == 'l' || c == 'L')
+                        if (c == 'l')
                         {
                             containsL = true;
                             break;
