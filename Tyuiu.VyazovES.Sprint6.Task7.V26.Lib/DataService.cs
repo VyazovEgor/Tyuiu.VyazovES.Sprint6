@@ -10,44 +10,49 @@ namespace Tyuiu.VyazovES.Sprint6.Task7.V26.Lib
         {
             try
             {
-
                 // Читаем все строки из файла
                 string[] lines = File.ReadAllLines(path);
 
-                // Определяем размеры матрицы
-                int rows = lines.Length;
-                if (rows == 0) return new int[0, 0];
+                // Убираем пустые строки
+                lines = lines.Where(line => !string.IsNullOrWhiteSpace(line)).ToArray();
 
-                // Разбиваем первую строку для определения количества столбцов
-                string[] firstLineValues = lines[0].Split(',');
+                if (lines.Length == 0)
+                {
+                    return new int[0, 0];
+                }
+
+                // Определяем количество строк и столбцов
+                int rows = lines.Length;
+
+                // Используем правильный разделитель - точку с запятой
+                string[] firstLineValues = lines[0].Split(';');
                 int cols = firstLineValues.Length;
 
-                // Создаем двумерный массив
+                // Создаем матрицу
                 int[,] matrix = new int[rows, cols];
 
-                // Заполняем массив данными из файла
+                // Заполняем матрицу
                 for (int i = 0; i < rows; i++)
                 {
-                    // Разбиваем строку на значения
-                    string[] values = lines[i].Split(',');
+                    string[] values = lines[i].Split(';');
 
                     for (int j = 0; j < cols; j++)
                     {
-                        // Парсим значение в целое число
-                        if (int.TryParse(values[j].Trim(), out int value))
+                        if (j < values.Length && int.TryParse(values[j].Trim(), out int value))
                         {
-                            matrix[i, j] = value;
-
                             // Изменяем значения во втором столбце (индекс 1)
                             // Положительные значения больше 5 меняем на 222
                             if (j == 1 && value > 5 && value > 0)
                             {
                                 matrix[i, j] = 222;
                             }
+                            else
+                            {
+                                matrix[i, j] = value;
+                            }
                         }
                         else
                         {
-                            // Если не удалось распарсить, оставляем 0
                             matrix[i, j] = 0;
                         }
                     }
