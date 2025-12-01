@@ -22,11 +22,21 @@ namespace Tyuiu.VyazovES.Sprint6.Task4.V29
                 double[] array;
                 array = new double[len];
                 array = ds.GetMassFunction(a, b);
+
+
+                this.chart1.ChartAreas[0].AxisX.Title = "Îñü X";
+                this.chart1.ChartAreas[0].AxisY.Title = "Îñü Y";
+
+                textBoxResult.Text = "";
+                chart1.Series[0].Points.Clear();
+
                 textBoxResult.AppendText("|   X     |    f(x)    | " + Environment.NewLine);
                 textBoxResult.AppendText("|---------------| " + Environment.NewLine);
+               
                 for (int i = 0; i <= len - 1; i++)
                 {
                     strline = string.Format("|{0,5:d}    |    {1, 5:f2} |", a, array[i]);
+                    this.chart1.Series[0].Points.AddXY(a, array[i]);
                     textBoxResult.AppendText(strline + Environment.NewLine);
                     a++;
 

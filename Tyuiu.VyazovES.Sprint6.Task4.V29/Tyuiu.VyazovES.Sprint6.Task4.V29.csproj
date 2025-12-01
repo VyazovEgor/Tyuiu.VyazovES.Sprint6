@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="servicestack.common" Version="6.0.2" />
+    <PackageReference Include="winforms.datavisualization" Version="1.10.0" />
   </ItemGroup>
 
   <ItemGroup>
