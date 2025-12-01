@@ -44,29 +44,26 @@
             // 
             // textBoxResult
             // 
-            textBoxResult.Location = new Point(766, 20);
-            textBoxResult.Margin = new Padding(4, 5, 4, 5);
+            textBoxResult.Location = new Point(727, 12);
             textBoxResult.Multiline = true;
             textBoxResult.Name = "textBoxResult";
-            textBoxResult.Size = new Size(242, 404);
+            textBoxResult.Size = new Size(171, 244);
             textBoxResult.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(17, 20);
-            pictureBox1.Margin = new Padding(4, 5, 4, 5);
+            pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(731, 251);
+            pictureBox1.Size = new Size(709, 140);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
             // button1
             // 
-            button1.Location = new Point(766, 437);
-            button1.Margin = new Padding(4, 5, 4, 5);
+            button1.Location = new Point(727, 262);
             button1.Name = "button1";
-            button1.Size = new Size(242, 38);
+            button1.Size = new Size(169, 23);
             button1.TabIndex = 2;
             button1.Text = "Рассчитать";
             button1.UseVisualStyleBackColor = true;
@@ -74,10 +71,9 @@
             // 
             // button2
             // 
-            button2.Location = new Point(766, 486);
-            button2.Margin = new Padding(4, 5, 4, 5);
+            button2.Location = new Point(727, 291);
             button2.Name = "button2";
-            button2.Size = new Size(242, 38);
+            button2.Size = new Size(169, 23);
             button2.TabIndex = 3;
             button2.Text = "Сохранить в файл";
             button2.UseVisualStyleBackColor = true;
@@ -89,14 +85,15 @@
             chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             chart1.Legends.Add(legend1);
-            chart1.Location = new Point(25, 279);
+            chart1.Location = new Point(18, 157);
+            chart1.Margin = new Padding(2, 2, 2, 2);
             chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Legend = "Legend1";
             series1.Name = "График";
             chart1.Series.Add(series1);
-            chart1.Size = new Size(723, 361);
+            chart1.Size = new Size(703, 227);
             chart1.TabIndex = 4;
             chart1.Text = "chart1";
             title1.Name = "Title1";
@@ -105,15 +102,14 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1021, 652);
+            ClientSize = new Size(904, 391);
             Controls.Add(chart1);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(pictureBox1);
             Controls.Add(textBoxResult);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
