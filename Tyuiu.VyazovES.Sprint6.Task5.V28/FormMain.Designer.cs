@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             dataGridView1 = new DataGridView();
@@ -43,56 +43,62 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            chart1.Legends.Add(legend3);
-            chart1.Location = new Point(591, 12);
+            chartArea1.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chart1.Legends.Add(legend1);
+            chart1.Location = new Point(8, 119);
+            chart1.Margin = new Padding(2);
             chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            chart1.Series.Add(series3);
-            chart1.Size = new Size(668, 591);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "График";
+            chart1.Series.Add(series1);
+            chart1.Size = new Size(601, 388);
             chart1.TabIndex = 0;
             chart1.Text = "chart1";
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 191);
+            dataGridView1.Location = new Point(613, 7);
+            dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(573, 351);
+            dataGridView1.Size = new Size(161, 529);
             dataGridView1.TabIndex = 1;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Location = new Point(8, 7);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(573, 173);
+            pictureBox1.Size = new Size(601, 108);
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
             // button1
             // 
-            button1.Location = new Point(12, 548);
+            button1.Location = new Point(8, 511);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(573, 41);
+            button1.Size = new Size(601, 25);
             button1.TabIndex = 4;
-            button1.Text = "Выбрать файл и построить график";
+            button1.Text = "Загрузить файл и построить график";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // FormMain
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1252, 615);
+            ClientSize = new Size(784, 548);
             Controls.Add(button1);
             Controls.Add(pictureBox1);
             Controls.Add(dataGridView1);
             Controls.Add(chart1);
+            Margin = new Padding(2);
             Name = "FormMain";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)chart1).EndInit();

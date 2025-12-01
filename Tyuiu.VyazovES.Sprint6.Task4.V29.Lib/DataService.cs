@@ -6,8 +6,10 @@ namespace Tyuiu.VyazovES.Sprint6.Task4.V29.Lib
 {
     public class DataService : ISprint6Task4V29
     {
+        
         public double[] GetMassFunction(int start, int end)
         {
+
             int size = end - start + 1;
             double[] result = new double[size];
             int index = 0;

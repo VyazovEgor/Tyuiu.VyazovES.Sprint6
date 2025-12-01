@@ -6,8 +6,21 @@ namespace Tyuiu.VyazovES.Sprint6.Task5.V28.Lib
 {
     public class DataService : ISprint6Task5V28
     {
+
+        public int len = 0;
+
         public double[] LoadFromDataFile(string path)
         {
+
+            using (StreamReader reader = new StreamReader(path))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    len++;
+                }
+            }
+
             double[] result = new double[0]; // Инициализируем пустой массив
             int index = 0;
 
