@@ -10,6 +10,7 @@ namespace Tyuiu.VyazovES.Sprint6.Task7.V26.Lib
         {
             try
             {
+
                 // Читаем все строки из файла
                 string[] lines = File.ReadAllLines(path);
 
