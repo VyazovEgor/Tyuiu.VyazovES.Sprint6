@@ -37,10 +37,13 @@ namespace Tyuiu.VyazovES.Sprint6.Task6.V19.Lib
                 // Проверяем каждое слово
                 foreach (string word in words)
                 {
-                    // Ищем букву 'l' или 'L' в слове (регистронезависимо)
-                    if (word.IndexOf('l', StringComparison.OrdinalIgnoreCase) >= 0)
+                    // Убираем возможные знаки препинания вокруг слова
+                    string cleanWord = word.Trim();
+
+                    // Проверяем, содержит ли слово букву 'l' (регистронезависимо)
+                    if (cleanWord.IndexOf('l', StringComparison.OrdinalIgnoreCase) >= 0)
                     {
-                        wordsWithL.Add(word);
+                        wordsWithL.Add(cleanWord);
                     }
                 }
 
