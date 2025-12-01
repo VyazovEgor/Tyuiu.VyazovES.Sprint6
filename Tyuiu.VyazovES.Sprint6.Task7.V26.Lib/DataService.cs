@@ -1,4 +1,6 @@
-﻿using System.Globalization;
+﻿using System.Data;
+using System.Globalization;
+using System.Reflection.Metadata;
 using System.Text;
 using tyuiu.cources.programming.interfaces.Sprint6;
 
@@ -65,6 +67,10 @@ namespace Tyuiu.VyazovES.Sprint6.Task7.V26.Lib
                 return new int[0, 0];
             }
         }
+
+
+
+       
     }
 }
 
