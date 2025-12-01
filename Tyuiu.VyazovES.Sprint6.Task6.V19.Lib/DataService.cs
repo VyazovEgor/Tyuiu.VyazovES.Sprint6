@@ -8,7 +8,6 @@ namespace Tyuiu.VyazovES.Sprint6.Task6.V19.Lib
     {
         public string CollectTextFromFile(string path)
         {
-            // Проверяем, существует ли файл
             if (!File.Exists(path))
             {
                 return "Файл не найден.";
@@ -16,52 +15,43 @@ namespace Tyuiu.VyazovES.Sprint6.Task6.V19.Lib
 
             try
             {
-                // Читаем весь текст из файла
                 string text = File.ReadAllText(path);
 
-                // Разбиваем текст на слова, используя различные разделители
-                char[] separators = new char[]
+                // Разделяем текст на слова, используя различные разделители
+                char[] separators = { ' ', '\t', '\n', '\r', ',', '.', '!', '?', ';', ':', '(', ')', '[', ']', '{', '}', '"', '\'' };
+
+                string[] allWords = text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+
+                // Фильтруем слова: должны содержать букву 'l' или 'L'
+                List<string> filteredWords = new List<string>();
+
+                foreach (string word in allWords)
                 {
-            ' ', '\t', '\n', '\r',
-            ',', '.', '!', '?', ';', ':',
-            '(', ')', '[', ']', '{', '}',
-            '"', '\'', '-', '—', '–', '…'
-                };
-
-                // Разделяем текст на слова
-                string[] words = text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-
-                // Создаем список для хранения слов с буквой 'l'
-                List<string> wordsWithL = new List<string>();
-
-                // Проверяем каждое слово
-                foreach (string word in words)
-                {
-                    // Убираем возможные знаки препинания вокруг слова
-                    string cleanWord = word.Trim();
-
-                    // Проверяем, содержит ли слово букву 'l' (регистронезависимо)
-                    if (cleanWord.IndexOf('l', StringComparison.OrdinalIgnoreCase) >= 0)
+                    // Проверяем наличие 'l' или 'L' в слове
+                    bool containsL = false;
+                    foreach (char c in word)
                     {
-                        wordsWithL.Add(cleanWord);
+                        if (c == 'l' || c == 'L')
+                        {
+                            containsL = true;
+                            break;
+                        }
+                    }
+
+                    if (containsL)
+                    {
+                        filteredWords.Add(word);
                     }
                 }
 
-                // Если нашли слова с 'l', объединяем их в строку
-                if (wordsWithL.Count > 0)
-                {
-                    // Объединяем слова через пробел
-                    return string.Join(" ", wordsWithL);
-                }
-                else
-                {
-                    return "Слова с буквой 'l' не найдены.";
-                }
+                // Если нужно точное соответствие, возможно, тут дополнительная фильтрация
+                // Например, исключить слова, которые слишком длинные или содержат цифры
+
+                return filteredWords.Count > 0 ? string.Join(" ", filteredWords) : "Слова с буквой 'l' не найдены.";
             }
             catch (Exception ex)
             {
-                // Обработка ошибок чтения файла
-                return $"Ошибка при чтении файла: {ex.Message}";
+                return $"Ошибка: {ex.Message}";
             }
         }
     }
